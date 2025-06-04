@@ -39,3 +39,4 @@ def extract_product_data(html):
                 yield {"name": name, "price": f"{price:.2f} zł"}
     except json.JSONDecodeError:
         return
+
