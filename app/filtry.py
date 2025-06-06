@@ -23,3 +23,23 @@ def filter_by_price_range(product, min_price=None, max_price=None):
     except (ValueError, AttributeError):
         # Obsługa błędów konwersji ceny
         return None
+
+def filter_by_rating(product, min_rating=None):
+    """
+    Sprawdza czy pojedynczy produkt spełnia minimalny wymagany rating.
+
+    Args:
+        product: Pojedynczy produkt (słownik)
+        min_rating: Minimalna ocena produktu (opcjonalne)
+
+    Returns:
+        Produkt jeśli spełnia warunek ratingowy, None w przeciwnym przypadku
+    """
+    try:
+        if min_rating is None:
+            raise ValueError("Minimalna ocena nie może być None")
+        min_rating = float(min_rating)
+        rating = product.get('rating', 0)  # Pobierz ocenę produktu, załóżmy, że jest w słowniku
+        return product if rating >= min_rating else None
+    except AttributeError:
+        return None
