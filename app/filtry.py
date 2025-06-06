@@ -43,3 +43,23 @@ def filter_by_rating(product, min_rating=None):
         return product if rating >= min_rating else None
     except AttributeError:
         return None
+
+def filter_by_review_count(product, min_review=None):
+    """
+    Sprawdza czy pojedynczy produkt spełnia minimalny wymagany rating.
+
+    Args:
+        product: Pojedynczy produkt (słownik)
+        min_rating: Minimalna ocena produktu (opcjonalne)
+
+    Returns:
+        Produkt jeśli spełnia warunek ratingowy, None w przeciwnym przypadku
+    """
+    try:
+        if  min_review is None:
+            raise ValueError("Minimalna liczba opinii nie może być None")
+        min_review = float( min_review)
+        review_count = product.get('review_count', 0)  # Pobierz ocenę produktu, załóżmy, że jest w słowniku
+        return product if review_count >= min_review else None
+    except AttributeError:
+        return None
