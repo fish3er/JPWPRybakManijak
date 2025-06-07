@@ -1,5 +1,8 @@
+from control import append
+
 from app import WebsiteIterator, extract_product_data
 from filtry import filter_by_price_range, filter_by_rating, filter_by_review_count
+from savetocsv import save_to_csv
 def main():
     base_url = "https://www.ceneo.pl/Ekspresy_do_kawy"
     scraper = WebsiteIterator(base_url, max_pages=5)
@@ -29,7 +32,7 @@ def main():
     #         )
     #         if filtered_product:
     #             print(f"{filtered_product['name']} - {filtered_product['price']} - Rating: {filtered_product['rating'] } przy {filtered_product['review_count']} opiniach" )
-
+    result = []
     for page_html in scraper:
         for product in extract_product_data(page_html):
             filtered_product = filter_by_review_count(
@@ -37,9 +40,9 @@ def main():
                 min_review=100
             )
             if filtered_product:
+                result.append(filtered_product)
                 print(f"{filtered_product['name']} - {filtered_product['price']} - Rating: {filtered_product['rating'] } przy {filtered_product['review_count']} opiniach" )
-
-
+    save_to_csv(result)
 
 if __name__ == "__main__":
     main()

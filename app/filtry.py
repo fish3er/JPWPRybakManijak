@@ -63,3 +63,12 @@ def filter_by_review_count(product, min_review=None):
         return product if review_count >= min_review else None
     except AttributeError:
         return None
+
+
+def apply_all_filters(product, min_price, max_price, min_rating, min_review):
+    product = filter_by_price_range(product, min_price, max_price)
+    if not product: return None
+    product = filter_by_rating(product, min_rating)
+    if not product: return None
+    product = filter_by_review_count(product, min_review)
+    return product
