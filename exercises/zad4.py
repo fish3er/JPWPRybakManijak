@@ -1,6 +1,9 @@
-def read_file_lines(filepath):
+def sliding_window(iterable, size):
     """
-    Generator that yields one line at a time from a file.
+    Generator zwracający kolejne okna (krotki) o długości size z iterable.
+    Przesuwa się o jeden element.
     """
-    # TODO: Open the file and yield each line lazily using a for loop
+    # TODO: Stwórz iterator z iterable
+    # TODO: Wypełnij początkowe okno
+    # TODO: W pętli przesuwaj okno i zwracaj jako krotkę
     pass
