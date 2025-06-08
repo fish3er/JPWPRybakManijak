@@ -10,7 +10,11 @@ def square_gen(x):
         yield i * i
 
 nums_lit = [1, 2, 3, 4, 5]
-
+print(dir(nums_lit))
+num = iter(nums_lit)
+print(dir(num))
+print(next(num))
+print(list(num))
 #list comprehension
 square_comprahension = [x*x for x in nums_lit]
 print(square_comprahension)
