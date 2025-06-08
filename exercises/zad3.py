@@ -1,6 +1,8 @@
-def take_n(iterator, n):
+def prime_generator(n):
     """
-    Takes the first n items from an iterator and returns them as a list.
+    Generator zwracający kolejne liczby pierwsze mniejsze lub równe n.
     """
-    # TODO: Iterate over the iterator and collect the first n items into a list
+    # TODO: Iteruj po liczbach od 2 do n
+    # TODO: Sprawdzaj, czy liczba jest pierwsza (np. przez dzielenie przez liczby < i)
+    # TODO: Jeśli liczba jest pierwsza, użyj 'yield' aby ją zwrócić
     pass
