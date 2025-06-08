@@ -12,20 +12,20 @@ Opis dla studentów:
     Stwórz funkcję generatora infinite_fibonacci(), która generuje nieskończony ciąg liczb Fibonacciego. Każde wywołanie next() powinno zwracać kolejną liczbę ciągu: 0, 1, 1, 2, 3, 5, ...
     Wskazówka: Użyj dwóch zmiennych do śledzenia aktualnej i następnej liczby oraz nieskończonej pętli while.
 
-3. Pobierz N elementów z iteratora
+3. Generator liczb pierwszych do n
 
 Opis dla studentów:
 
-    Napisz funkcję take_n(iterator, n), która pobiera pierwsze n elementów z dowolnego iteratora i zwraca je jako listę. Jeśli iterator się skończy wcześniej, zwróć tyle elementów, ile było dostępnych.
-    Wskazówka: Użyj pętli oraz funkcji next() z obsługą wyjątku StopIteration.
+    Napisz funkcję generatora prime_generator(n), która zwraca kolejne liczby pierwsze mniejsze lub równe n.
+    Wskazówka: Użyj prostego algorytmu sprawdzania pierwszości (np. dzielenie przez wcześniejsze liczby). Generator powinien zatrzymać się po przekroczeniu n.
 
-
-4. Czytanie pliku linia po linii (generator)
+4. Slajdujące okno na iteratorze (Sliding Window)
 
 Opis dla studentów:
 
-    Zaimplementuj funkcję generatora read_file_lines(filepath), która otwiera plik i zwraca po jednej linii przy każdym wywołaniu, usuwając znak końca linii (\n).
-    Wskazówka: Skorzystaj z bloku with open(...) oraz pętli for, aby wczytywać linie pojedynczo.
+    Zaimplementuj funkcję sliding_window(iterable, size), która zwraca generator produkujący okna (krotki) o długości size, przesuwane o jeden element po iterable.
+    Dla wejścia [1, 2, 3, 4, 5] i size=3, generator powinien zwrócić: (1,2,3), (2,3,4), (3,4,5).
+    Wskazówka: Użyj bufora (np. listy lub deque) do śledzenia ostatnich size elementów.
 
 5. Iterowalny obiekt z funkcją podglądu (trudniejsze)
 
