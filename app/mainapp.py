@@ -35,18 +35,17 @@ def main():
                 # print(f"{filtered_product['name']} - {filtered_product['price']} - Rating: {filtered_product['rating'] } przy {filtered_product['review_count']} opiniach" )
                 result.append(filtered_product)
     result.sort(key=lambda product: product['rating'], reverse=True)
-    # print(result)
-    # save_to_csv(result)
+
     final = []
     for i in range(len(result)):
         if result[i] is not None:
             filtered_product = result[i]
             if filtered_product['review_count'] > 40:
-                # print(f"{filtered_product['name']} - {filtered_product['price']} - Rating: {filtered_product['rating'] } ")
                 if filtered_product not in final:
                     final.append(filtered_product)
     for i in range(len(final)):
         print(f"{final[i]['name']} - {final[i]['price']} - Rating: {final[i]['rating'] } przy {final[i]['review_count']} opiniach" )
+
     # result = []
     # for page_html in scraper:
     #     for product in extract_product_data(page_html):
