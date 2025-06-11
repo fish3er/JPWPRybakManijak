@@ -56,7 +56,7 @@ def main():
     #         if filtered_product:
     #             result.append(filtered_product)
     #             print(f"{filtered_product['name']} - {filtered_product['price']} - Rating: {filtered_product['rating'] } przy {filtered_product['review_count']} opiniach" )
-    # save_to_csv(result)
+    save_to_csv(result)
 
 if __name__ == "__main__":
     main()

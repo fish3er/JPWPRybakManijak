@@ -20,6 +20,7 @@ class WebsiteIterator:
         if response.status_code != 200:
             raise StopIteration
         self.current_page += 1
+        # print("next page")
         return response.text
 
 
